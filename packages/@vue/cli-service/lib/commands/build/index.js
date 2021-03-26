@@ -137,6 +137,20 @@ async function build (args, api, options) {
   let webpackConfig
   if (args.target === 'lib') {
     webpackConfig = require('./resolveLibConfig')(api, args, options)
+    // 这一块时修改target lib时候加入filenamehash的配置
+    // start
+    const outputFilename = require('../../util/getAssetPath')(
+      options,
+      'app.[contenthash:20].js'
+    )
+    webpackConfig[0].output.filename = outputFilename
+    webpackConfig[0].output.chunkFilename = outputFilename
+    webpackConfig[0].plugins.forEach(plugin => {
+      if (plugin instanceof require("mini-css-extract-plugin")) {
+        plugin.options.filename = `app.[contenthash:20].css`
+      }
+    })
+    // end
   } else if (
     args.target === 'wc' ||
     args.target === 'wc-async'
