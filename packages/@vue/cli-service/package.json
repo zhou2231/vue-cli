@@ -1,27 +1,17 @@
 {
   "name": "@vue/cli-service",
-  "version": "4.3.0-terry",
-  "description": "local service for vue-cli projects",
+  "version": "4.3.0-Terry",
+  "description": "The Scenator app standard is supported based on Vue CLI 4.3.0",
   "main": "lib/Service.js",
   "typings": "types/index.d.ts",
   "bin": {
     "vue-cli-service": "bin/vue-cli-service.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vuejs/vue-cli.git",
-    "directory": "packages/@vue/cli-service"
-  },
-  "keywords": [
-    "vue",
-    "cli"
-  ],
-  "author": "Evan You",
+  "author": "Terry",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/vuejs/vue-cli/issues"
+  "scripts": {
+    "pub": "npm publish"
   },
-  "homepage": "https://cli.vuejs.org/",
   "dependencies": {
     "@intervolga/optimize-cssnano-plugin": "^1.0.5",
     "@soda/friendly-errors-webpack-plugin": "^1.7.1",
@@ -109,7 +99,7 @@
     "vuex": "^3.1.3"
   },
   "publishConfig": {
-    "access": "public"
+    "registry": "https://scm.fulongtech.cn/nexus/content/repositories/npm-release/"
   },
   "engines": {
     "node": ">=8"
