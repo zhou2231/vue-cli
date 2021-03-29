@@ -9,3 +9,5 @@ temp
 .version
 .versions
 .changelog
+/packages/@vue/cli-service/package-lock.json
+/packages/@vue/cli-service/.idea
